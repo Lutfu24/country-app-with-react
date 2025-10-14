@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function Header({ cards, setRegion, setSearch }) {
+  const [inp, setInp] = useState("");
   const data = [...new Set(cards.map((card) => card.region))];
 
   return (
@@ -31,11 +34,16 @@ function Header({ cards, setRegion, setSearch }) {
           type="text"
           placeholder="search"
           onInput={(e) => {
-            setSearch(e.target.value);
+            setInp(e.target.value);
           }}
           className="bg-white px-5 py-2 rounded-md outline-none"
         />
-        <button className="text-4xl cursor-pointer">🔍</button>
+        <button
+          onClick={() => setSearch(inp)}
+          className="text-4xl cursor-pointer"
+        >
+          🔍
+        </button>
       </label>
       <button
         className="text-3xl cursor-pointer"
