@@ -1,5 +1,7 @@
+import { FaAnglesDown } from "react-icons/fa6";
+
 function CustomCard({ cards, region, search }) {
-  const randomNumber = Math.floor(Math.random() * 50) + 1;
+  const randomNumber = Math.floor(Math.random() * 49) + 1;
   const findCard = cards.find(
     (card, index) => card.name !== "Armenia" && index === randomNumber
   );
@@ -36,7 +38,7 @@ function CustomCard({ cards, region, search }) {
           }}
           className="bg-red-900 cursor-pointer hover:drop-shadow-2xl/50 hover:scale-105 text-white text-2xl px-5 py-2 rounded-2xl my-20"
         >
-          show cards⬇️
+          <FaAnglesDown />
         </button>
       </div>
     )
